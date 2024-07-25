@@ -1,0 +1,6 @@
+@TaskCloud.Tasks_HostAddress = http://localhost:5107
+
+GET {{TaskCloud.Tasks_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

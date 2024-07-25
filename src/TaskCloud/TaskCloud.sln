@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.WebApp", "Frontend\TaskCloud.WebApp\TaskCloud.WebApp.csproj", "{5EEE8746-974F-4A6E-A607-80B296941225}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Authentication", "Backend\TaskCloud.Authentication\TaskCloud.Authentication.csproj", "{185ABE59-D700-40DA-9CA0-AD74756DF340}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{F1D45023-A6DE-4CC0-B7E8-28CCE5D446EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{E99D1150-E4AE-4072-8837-AD04CE7FD210}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{CF6037CE-DE66-4173-A7E8-6B57B782718C}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users", "Backend\TaskCloud.Users\TaskCloud.Users.csproj", "{8761353C-5220-467D-8C19-1ABD76EC46E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Tasks", "Backend\TaskCloud.Tasks\TaskCloud.Tasks.csproj", "{FD461CE0-E184-4AB2-9169-FF9EA4BC3B9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Notifications", "Backend\TaskCloud.Notifications\TaskCloud.Notifications.csproj", "{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{208C843D-1CD3-462A-8F4F-39DAE0FEA09A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notifications", "Notifications", "{53DAB129-3370-47C8-ACD7-227536088556}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{7C488D3F-DBE7-4706-AF11-8B23C9319787}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{095B2B51-2144-4551-A91B-3C76E2D49C3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EEE8746-974F-4A6E-A607-80B296941225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EEE8746-974F-4A6E-A607-80B296941225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EEE8746-974F-4A6E-A607-80B296941225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EEE8746-974F-4A6E-A607-80B296941225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{185ABE59-D700-40DA-9CA0-AD74756DF340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185ABE59-D700-40DA-9CA0-AD74756DF340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185ABE59-D700-40DA-9CA0-AD74756DF340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185ABE59-D700-40DA-9CA0-AD74756DF340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8761353C-5220-467D-8C19-1ABD76EC46E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8761353C-5220-467D-8C19-1ABD76EC46E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8761353C-5220-467D-8C19-1ABD76EC46E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8761353C-5220-467D-8C19-1ABD76EC46E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD461CE0-E184-4AB2-9169-FF9EA4BC3B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD461CE0-E184-4AB2-9169-FF9EA4BC3B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD461CE0-E184-4AB2-9169-FF9EA4BC3B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD461CE0-E184-4AB2-9169-FF9EA4BC3B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5EEE8746-974F-4A6E-A607-80B296941225} = {F1D45023-A6DE-4CC0-B7E8-28CCE5D446EE}
+		{185ABE59-D700-40DA-9CA0-AD74756DF340} = {208C843D-1CD3-462A-8F4F-39DAE0FEA09A}
+		{8761353C-5220-467D-8C19-1ABD76EC46E4} = {095B2B51-2144-4551-A91B-3C76E2D49C3A}
+		{FD461CE0-E184-4AB2-9169-FF9EA4BC3B9B} = {7C488D3F-DBE7-4706-AF11-8B23C9319787}
+		{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6} = {53DAB129-3370-47C8-ACD7-227536088556}
+		{208C843D-1CD3-462A-8F4F-39DAE0FEA09A} = {DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7}
+		{53DAB129-3370-47C8-ACD7-227536088556} = {DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7}
+		{7C488D3F-DBE7-4706-AF11-8B23C9319787} = {DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7}
+		{095B2B51-2144-4551-A91B-3C76E2D49C3A} = {DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7}
+		{DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7} = {E99D1150-E4AE-4072-8837-AD04CE7FD210}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1B7584C-F8C9-49CA-A09B-9EF98D885C88}
+	EndGlobalSection
+EndGlobal

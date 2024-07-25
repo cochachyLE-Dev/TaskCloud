@@ -1,0 +1,6 @@
+@TaskCloud.Notifications_HostAddress = http://localhost:5198
+
+GET {{TaskCloud.Notifications_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
