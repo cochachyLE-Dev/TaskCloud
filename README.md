@@ -1,33 +1,35 @@
-1. Visión General de la Solución:
+TaskCloud es una aplicaciÃ³n web diseÃ±ada para ayudar a individuos y equipos a organizar y gestionar sus tareas de manera eficiente. Construida con Blazor y .NET Core, esta aplicaciÃ³n sigue los principios de SOA y Clean Architecture para garantizar una arquitectura sÃ³lida y escalable.
 
-1.1. Objetivo: 
+#### VisiÃ³n General de la SoluciÃ³n:
 
-    Desarrollar una aplicación web robusta, escalable y mantenible para la gestión de tareas utilizando Blazor (.NET) como marco de interfaz e implementando principios de arquitectura orientada a servicios (SOA) en el backend. La aplicación se adherirá al patrón de arquitectura limpia para lograr una clara separación de preocupaciones y promover la capacidad de prueba.
+##### Objetivo:
+
+    Desarrollar una aplicaciÃ³n web robusta, escalable y mantenible para la gestiÃ³n de tareas utilizando Blazor (.NET) como marco de interfaz e implementando principios de arquitectura orientada a servicios (SOA) en el backend. La aplicaciÃ³n se adherirÃ¡ al patrÃ³n de arquitectura limpia para lograr una clara separaciÃ³n de preocupaciones y promover la capacidad de prueba.
 
     Este objetivo enfatiza:
 
-    - Robustez: La aplicación debe ser capaz de manejar un gran volumen de usuarios y tareas.
-    - Escalabilidad: La arquitectura debe estar diseñada para adaptarse al crecimiento futuro.
-    - Mantenibilidad: El código debe estar bien estructurado y ser fácil de entender para futuros desarrolladores.
-    - Separación clara de preocupaciones: la aplicación debe dividirse en capas distintas (presentación, aplicación e infraestructura) para mejorar la capacidad de prueba y la reutilización.
+    - Robustez: La aplicaciÃ³n debe ser capaz de manejar un gran volumen de usuarios y tareas.
+    - Escalabilidad: La arquitectura debe estar diseÃ±ada para adaptarse al crecimiento futuro.
+    - Mantenibilidad: El cÃ³digo debe estar bien estructurado y ser fÃ¡cil de entender para futuros desarrolladores.
+    - SeparaciÃ³n clara de preocupaciones: la aplicaciÃ³n debe dividirse en capas distintas (presentaciÃ³n, aplicaciÃ³n e infraestructura) para mejorar la capacidad de prueba y la reutilizaciÃ³n.
     
-1.2. Alcance Específico
+##### Alcance EspecÃ­fico
     
     Funcionalidades:
 
-    - Gestión de Tareas:
-        - Creación, edición y eliminación de tareas.
-        - Asignación de tareas a usuarios.
+    - GestiÃ³n de Tareas:
+        - CreaciÃ³n, ediciÃ³n y eliminaciÃ³n de tareas.
+        - AsignaciÃ³n de tareas a usuarios.
         - Establecimiento de prioridades y fechas de vencimiento.
         - Seguimiento del progreso de las tareas.
-        - Gestión de subtareas y dependencias.
+        - GestiÃ³n de subtareas y dependencias.
 
-    - Gestión de Usuarios:
-        - Registro y autenticación de usuarios.
-        - Gestión de perfiles de usuario.
-        - Asignación de roles y permisos.
+    - GestiÃ³n de Usuarios:
+        - Registro y autenticaciÃ³n de usuarios.
+        - GestiÃ³n de perfiles de usuario.
+        - AsignaciÃ³n de roles y permisos.
     
-    - Colaboración:
+    - ColaboraciÃ³n:
         - Comentarios y discuciones en las tareas.
         - Compartir tareas con otros usuarios.
 
@@ -36,59 +38,59 @@
         - Integraciones con herramientas de comunicaciones (Slack, Teams.) (Posteriormente)
 
     - Notificaciones:
-        - Notificaciones por correo electrónico, push o in-app sobre cambios en las tareas, vencimientos, etc.
-    - Informes y Analítica:
-        - Generación de informes sobre el progreso de los proyectos y la productividad de los usuarios (Posteriormente).
-        - Visualización de datos en gráficos y tablas (Posteriormente).
+        - Notificaciones por correo electrÃ³nico, push o in-app sobre cambios en las tareas, vencimientos, etc.
+    - Informes y AnalÃ­tica:
+        - GeneraciÃ³n de informes sobre el progreso de los proyectos y la productividad de los usuarios (Posteriormente).
+        - VisualizaciÃ³n de datos en grÃ¡ficos y tablas (Posteriormente).
 
-    Tecnologías:
+    TecnologÃ­as:
 
     - Interfaz: Blazor (.NET)
     - Backend: .NET 8 (C#)
     - Base de datos: PostgreSQL
     - Nube: GCP
-    - SOA: Implementación de servicios autónomos para autenticación, gestión de usuarios, tareas y notificaciones.
-    - Clean Architecture: Separación clara de las capas de presentación, aplicaciín y dominio.
+    - SOA: ImplementaciÃ³n de servicios autÃ³nomos para autenticaciÃ³n, gestiÃ³n de usuarios, tareas y notificaciones.
+    - Clean Architecture: SeparaciÃ³n clara de las capas de presentaciÃ³n, aplicaciÃ³n y dominio.
     - Contenedores: Docker
-    - Orquestación: Kubernetes (no se aplica para este ejemplo)
+    - OrquestaciÃ³n: Kubernetes (no se aplica para este ejemplo)
 
     Arquitectura:
 
-    - SOA: Cada funcionalidad clave (autenticación, gestión de usuarios, tareas, notificaciones) será un servicio independiente.
-    - Clean Architecture: Separación clara de las capas:
-        - Presentación: Blazor components
-        - Aplicación: Lógica de negocio y casos de uso
+    - SOA: Cada funcionalidad clave (autenticaciÃ³n, gestiÃ³n de usuarios, tareas, notificaciones) serÃ¡ un servicio independiente.
+    - Clean Architecture: SeparaciÃ³n clara de las capas:
+        - PresentaciÃ³n: Blazor components
+        - AplicaciÃ³n: LÃ³gica de negocio y casos de uso
         - Dominio: Entidades y reglas de negocio
         - Infraestructura: Acceso a datos, servicios externos
-    - Comunicación entre servicios: REST API
-    - Seguridad: Authenticación basada en tokens, autorización basada en roles, encriptación de datos sensibles.
+    - ComunicaciÃ³n entre servicios: REST API
+    - Seguridad: AuthenticaciÃ³n basada en tokens, autorizaciÃ³n basada en roles, encriptaciÃ³n de datos sensibles.
 
     Pruebas:
     
-    - Estrategias de Prueba: Unitarias, de integración, de extremo a extremo.
+    - Estrategias de Prueba: Unitarias, de integraciÃ³n, de extremo a extremo.
     - Herramientas de Prueba: XUnit
 
-1.3. Descripción de los Servicios:
+##### DescripciÃ³n de los Servicios:
 
-    Servicio de Autenticación:
+    Servicio de AutenticaciÃ³n:
 
-    - Flujo de autenticación (registro, inicio de sesión, recuperación de contraseña).
-    - Mecanismos de seguridad (encriptación, tokens).
-    - Integración con proveedores de identidad local.
+    - Flujo de autenticaciÃ³n (registro, inicio de sesiÃ³n, recuperaciÃ³n de contraseÃ±a).
+    - Mecanismos de seguridad (encriptaciÃ³n, tokens).
+    - IntegraciÃ³n con proveedores de identidad local.
 
-    Servicio de Gestión de Usuarios:
+    Servicio de GestiÃ³n de Usuarios:
 
     - Operaciones CRUD sobre usuarios (crear, leer, actualizar, eliminar).
-    - Gestión de roles y permisos.
+    - GestiÃ³n de roles y permisos.
 
-    Servicio de Gestión de Tareas:
+    Servicio de GestiÃ³n de Tareas:
 
-    - Ciclo de vida de una tarea (creación, asignación, finalización).
+    - Ciclo de vida de una tarea (creaciÃ³n, asignaciÃ³n, finalizaciÃ³n).
     - Relaciones entre tareas (dependencias, prioridades)
-    - Integración con calendarios.
+    - IntegraciÃ³n con calendarios.
 
     Servicio de Notificaciones:
 
-    - Tipos de notificaciones (correo electrónico, push, SMS).
-    - Canales de notificación.
-    - Configuración de preferencias de notificación por usuario.
+    - Tipos de notificaciones (correo electrÃ³nico, push, SMS).
+    - Canales de notificaciÃ³n.
+    - ConfiguraciÃ³n de preferencias de notificaciÃ³n por usuario.
