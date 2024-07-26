@@ -16,11 +16,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users", "Backend\TaskCloud.Users\TaskCloud.Users.csproj", "{8761353C-5220-467D-8C19-1ABD76EC46E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Users", "Backend\TaskCloud.Users\TaskCloud.Users.csproj", "{8761353C-5220-467D-8C19-1ABD76EC46E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Tasks", "Backend\TaskCloud.Tasks\TaskCloud.Tasks.csproj", "{FD461CE0-E184-4AB2-9169-FF9EA4BC3B9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Tasks", "Backend\TaskCloud.Tasks\TaskCloud.Tasks.csproj", "{FD461CE0-E184-4AB2-9169-FF9EA4BC3B9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Notifications", "Backend\TaskCloud.Notifications\TaskCloud.Notifications.csproj", "{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Notifications", "Backend\TaskCloud.Notifications\TaskCloud.Notifications.csproj", "{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{208C843D-1CD3-462A-8F4F-39DAE0FEA09A}"
 EndProject
@@ -31,6 +31,22 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{095B2B51-2144-4551-A91B-3C76E2D49C3A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Tasks.Domain", "Backend\TaskCloud.Tasks.Domain\TaskCloud.Tasks.Domain.csproj", "{55B297F8-1E6D-4F13-97CC-8BC3E8B4026E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Tasks.Infraestructure", "Backend\TaskCloud.Tasks.Infraestructure\TaskCloud.Tasks.Infraestructure.csproj", "{F4579D4C-8992-4301-B675-8B459CF5583C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Tasks.Persistence", "Backend\TaskCloud.Tasks.Persistence\TaskCloud.Tasks.Persistence.csproj", "{4B63CC8B-E9ED-4CC3-B2D6-E07576C2E8FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Tasks.Service", "Backend\TaskCloud.Tasks.Service\TaskCloud.Tasks.Service.csproj", "{4DD866AD-B4FB-44D7-9D9E-CF7D24A17A40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users.Domain", "Backend\TaskCloud.Users.Domain\TaskCloud.Users.Domain.csproj", "{9C8393B1-3D4A-47E7-9BD1-233E86354D11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users.Infraestructure", "Backend\TaskCloud.Users.Infraestructure\TaskCloud.Users.Infraestructure.csproj", "{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users.Persistence", "TaskCloud.Users.Persistence\TaskCloud.Users.Persistence.csproj", "{52D5AD2E-7277-455B-926A-D2F56B29480B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users.Service", "TaskCloud.Users.Service\TaskCloud.Users.Service.csproj", "{C7CB347F-0E9C-4259-A66D-E49E2B479A33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +74,38 @@ Global
 		{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74F08F8A-CDF1-40D2-B9F9-B3FBC1C344E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B297F8-1E6D-4F13-97CC-8BC3E8B4026E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B297F8-1E6D-4F13-97CC-8BC3E8B4026E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B297F8-1E6D-4F13-97CC-8BC3E8B4026E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B297F8-1E6D-4F13-97CC-8BC3E8B4026E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4579D4C-8992-4301-B675-8B459CF5583C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4579D4C-8992-4301-B675-8B459CF5583C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4579D4C-8992-4301-B675-8B459CF5583C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4579D4C-8992-4301-B675-8B459CF5583C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B63CC8B-E9ED-4CC3-B2D6-E07576C2E8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B63CC8B-E9ED-4CC3-B2D6-E07576C2E8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B63CC8B-E9ED-4CC3-B2D6-E07576C2E8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B63CC8B-E9ED-4CC3-B2D6-E07576C2E8FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD866AD-B4FB-44D7-9D9E-CF7D24A17A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD866AD-B4FB-44D7-9D9E-CF7D24A17A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD866AD-B4FB-44D7-9D9E-CF7D24A17A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD866AD-B4FB-44D7-9D9E-CF7D24A17A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C8393B1-3D4A-47E7-9BD1-233E86354D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C8393B1-3D4A-47E7-9BD1-233E86354D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C8393B1-3D4A-47E7-9BD1-233E86354D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C8393B1-3D4A-47E7-9BD1-233E86354D11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D5AD2E-7277-455B-926A-D2F56B29480B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D5AD2E-7277-455B-926A-D2F56B29480B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D5AD2E-7277-455B-926A-D2F56B29480B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D5AD2E-7277-455B-926A-D2F56B29480B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7CB347F-0E9C-4259-A66D-E49E2B479A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CB347F-0E9C-4259-A66D-E49E2B479A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CB347F-0E9C-4259-A66D-E49E2B479A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CB347F-0E9C-4259-A66D-E49E2B479A33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +121,14 @@ Global
 		{7C488D3F-DBE7-4706-AF11-8B23C9319787} = {DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7}
 		{095B2B51-2144-4551-A91B-3C76E2D49C3A} = {DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7}
 		{DAAC3BCD-79F2-441A-A55C-A42DC2BF3CA7} = {E99D1150-E4AE-4072-8837-AD04CE7FD210}
+		{55B297F8-1E6D-4F13-97CC-8BC3E8B4026E} = {7C488D3F-DBE7-4706-AF11-8B23C9319787}
+		{F4579D4C-8992-4301-B675-8B459CF5583C} = {7C488D3F-DBE7-4706-AF11-8B23C9319787}
+		{4B63CC8B-E9ED-4CC3-B2D6-E07576C2E8FF} = {7C488D3F-DBE7-4706-AF11-8B23C9319787}
+		{4DD866AD-B4FB-44D7-9D9E-CF7D24A17A40} = {7C488D3F-DBE7-4706-AF11-8B23C9319787}
+		{9C8393B1-3D4A-47E7-9BD1-233E86354D11} = {095B2B51-2144-4551-A91B-3C76E2D49C3A}
+		{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB} = {095B2B51-2144-4551-A91B-3C76E2D49C3A}
+		{52D5AD2E-7277-455B-926A-D2F56B29480B} = {095B2B51-2144-4551-A91B-3C76E2D49C3A}
+		{C7CB347F-0E9C-4259-A66D-E49E2B479A33} = {095B2B51-2144-4551-A91B-3C76E2D49C3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1B7584C-F8C9-49CA-A09B-9EF98D885C88}
