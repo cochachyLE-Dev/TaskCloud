@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Orchestration\TaskCloud.ServiceDefaults\TaskCloud.ServiceDefaults.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -40,13 +40,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Tasks.Persistence
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Tasks.Service", "Backend\TaskCloud.Tasks.Service\TaskCloud.Tasks.Service.csproj", "{4DD866AD-B4FB-44D7-9D9E-CF7D24A17A40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users.Domain", "Backend\TaskCloud.Users.Domain\TaskCloud.Users.Domain.csproj", "{9C8393B1-3D4A-47E7-9BD1-233E86354D11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Users.Domain", "Backend\TaskCloud.Users.Domain\TaskCloud.Users.Domain.csproj", "{9C8393B1-3D4A-47E7-9BD1-233E86354D11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users.Infraestructure", "Backend\TaskCloud.Users.Infraestructure\TaskCloud.Users.Infraestructure.csproj", "{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Users.Infraestructure", "Backend\TaskCloud.Users.Infraestructure\TaskCloud.Users.Infraestructure.csproj", "{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users.Persistence", "TaskCloud.Users.Persistence\TaskCloud.Users.Persistence.csproj", "{52D5AD2E-7277-455B-926A-D2F56B29480B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Users.Persistence", "Backend\TaskCloud.Users.Persistence\TaskCloud.Users.Persistence.csproj", "{52D5AD2E-7277-455B-926A-D2F56B29480B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.Users.Service", "TaskCloud.Users.Service\TaskCloud.Users.Service.csproj", "{C7CB347F-0E9C-4259-A66D-E49E2B479A33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Users.Service", "Backend\TaskCloud.Users.Service\TaskCloud.Users.Service.csproj", "{C7CB347F-0E9C-4259-A66D-E49E2B479A33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orchestration", "Orchestration", "{B0617660-4E35-4D8C-AE18-42152BB743F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.AppHost", "Orchestration\TaskCloud.AppHost\TaskCloud.AppHost.csproj", "{57C6E597-A674-4609-9493-FFBC77DAF8A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.ServiceDefaults", "Orchestration\TaskCloud.ServiceDefaults\TaskCloud.ServiceDefaults.csproj", "{EBE06D60-BB41-47C2-81F2-F18F67DDA191}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,6 +112,14 @@ Global
 		{C7CB347F-0E9C-4259-A66D-E49E2B479A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7CB347F-0E9C-4259-A66D-E49E2B479A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7CB347F-0E9C-4259-A66D-E49E2B479A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C6E597-A674-4609-9493-FFBC77DAF8A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C6E597-A674-4609-9493-FFBC77DAF8A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C6E597-A674-4609-9493-FFBC77DAF8A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C6E597-A674-4609-9493-FFBC77DAF8A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE06D60-BB41-47C2-81F2-F18F67DDA191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE06D60-BB41-47C2-81F2-F18F67DDA191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE06D60-BB41-47C2-81F2-F18F67DDA191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE06D60-BB41-47C2-81F2-F18F67DDA191}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +143,8 @@ Global
 		{DCEE8B31-1FD9-416F-9CCC-8DC8614E36EB} = {095B2B51-2144-4551-A91B-3C76E2D49C3A}
 		{52D5AD2E-7277-455B-926A-D2F56B29480B} = {095B2B51-2144-4551-A91B-3C76E2D49C3A}
 		{C7CB347F-0E9C-4259-A66D-E49E2B479A33} = {095B2B51-2144-4551-A91B-3C76E2D49C3A}
+		{57C6E597-A674-4609-9493-FFBC77DAF8A2} = {B0617660-4E35-4D8C-AE18-42152BB743F6}
+		{EBE06D60-BB41-47C2-81F2-F18F67DDA191} = {B0617660-4E35-4D8C-AE18-42152BB743F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1B7584C-F8C9-49CA-A09B-9EF98D885C88}

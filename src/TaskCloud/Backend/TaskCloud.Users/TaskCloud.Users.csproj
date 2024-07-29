@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Orchestration\TaskCloud.ServiceDefaults\TaskCloud.ServiceDefaults.csproj" />
     <ProjectReference Include="..\TaskCloud.Users.Infraestructure\TaskCloud.Users.Infraestructure.csproj" />
   </ItemGroup>
 

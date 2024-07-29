@@ -1,25 +1,47 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+
+using TaskCloud.Authentication.Data;
+using TaskCloud.Authentication.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddControllersWithViews();
+
+builder.AddNpgsqlDbContext<ApplicationDbContext>("identitydb");
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddIdentityServer(options =>
+{
+    options.Authentication.CookieLifetime = TimeSpan.FromHours(2);
+
+    options.Events.RaiseErrorEvents = true;
+    options.Events.RaiseInformationEvents = true;
+    options.Events.RaiseFailureEvents = true;
+    options.Events.RaiseSuccessEvents = true;
+
+    options.KeyManagement.Enabled = false;
+}).AddAspNetIdentity<ApplicationUser>()
+// Not recommended for production - you need to store your key material somewhere secure
+.AddDeveloperSigningCredential();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.MapDefaultEndpoints();
 
-app.UseHttpsRedirection();
+app.UseStaticFiles();
 
+app.UseRouting();
+app.UseIdentityServer();
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapDefaultControllerRoute();
 
 app.Run();

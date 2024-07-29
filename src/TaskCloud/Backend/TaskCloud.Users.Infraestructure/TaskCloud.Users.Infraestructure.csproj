@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TaskCloud.Users.Service\TaskCloud.Users.Service.csproj" />
+    <ProjectReference Include="..\..\Backend\TaskCloud.Users.Service\TaskCloud.Users.Service.csproj" />
   </ItemGroup>
 
 </Project>
