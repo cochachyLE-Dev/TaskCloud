@@ -1,11 +1,23 @@
-﻿@page "/weather"
+﻿@page "/tasks"
 @attribute [StreamRendering]
 
 <PageTitle>Weather</PageTitle>
 
-<h1>Weather</h1>
+<h1>Tasks</h1>
 
-<p>This component demonstrates showing data.</p>
+<nav class="nav">
+    <div class="nav-item flex-column">
+        <NavLink class="nav-link" href="/tasks/create">
+            New Taks
+        </NavLink>
+    </div>
+    <div class="nav-item flex-column">
+        <NavLink class="nav-link" href="/tasks/delete">
+            Delete
+        </NavLink>
+    </div>
+</nav>
+
 
 @if (forecasts == null)
 {
@@ -16,20 +28,39 @@ else
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Date</th>
                 <th>Temp. (C)</th>
                 <th>Temp. (F)</th>
                 <th>Summary</th>
+                <th>Status</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var forecast in forecasts)
             {
                 <tr>
+                    <td>
+                        <input type="checkbox" @bind-value="forecast.IsSelected" />
+                    </td>
                     <td>@forecast.Date.ToShortDateString()</td>
                     <td>@forecast.TemperatureC</td>
                     <td>@forecast.TemperatureF</td>
                     <td>@forecast.Summary</td>
+                    <td>
+                        <InputSelect @bind-Value="selectedItem">
+                            @foreach (var item in items)
+                            {
+                                <option value="@item">@item</option>
+                            }
+                        </InputSelect>
+                    </td>
+                    <td>
+                        <NavLink class="nav-link" href="/tasks/edit/1">
+                            edit
+                        </NavLink>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -37,6 +68,9 @@ else
 }
 
 @code {
+    private string[] items = new string[] { "Option 1", "Option 2", "Option 3" };
+    private string selectedItem;
+
     private WeatherForecast[]? forecasts;
 
     protected override async Task OnInitializedAsync()
@@ -60,5 +94,6 @@ else
         public int TemperatureC { get; set; }
         public string? Summary { get; set; }
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        public bool IsSelected { get; set; }
     }
 }

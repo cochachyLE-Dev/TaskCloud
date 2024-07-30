@@ -50,7 +50,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.Users.Service", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orchestration", "Orchestration", "{B0617660-4E35-4D8C-AE18-42152BB743F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskCloud.AppHost", "Orchestration\TaskCloud.AppHost\TaskCloud.AppHost.csproj", "{57C6E597-A674-4609-9493-FFBC77DAF8A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.AppHost", "Orchestration\TaskCloud.AppHost\TaskCloud.AppHost.csproj", "{57C6E597-A674-4609-9493-FFBC77DAF8A2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskCloud.ServiceDefaults", "Orchestration\TaskCloud.ServiceDefaults\TaskCloud.ServiceDefaults.csproj", "{EBE06D60-BB41-47C2-81F2-F18F67DDA191}"
 EndProject
