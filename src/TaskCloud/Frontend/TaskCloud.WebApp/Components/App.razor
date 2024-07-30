@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="app.css?v3" />
     <link rel="stylesheet" href="TaskCloud.WebApp.styles.css" />
+    <script src="app.js"></script>
     <link rel="icon" type="image/png" href="favicon.png" />
     <HeadOutlet />
 </head>
@@ -15,6 +16,18 @@
 <body>
     <Routes />
     <script src="_framework/blazor.web.js"></script>
+  @*   <script src="jsComponentInitializers.js"></script> *@
+   @*  <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Wait for Blazor to be initialized
+            Blazor.start().then(() => {
+                // Now you can safely include app.js
+                const script = document.createElement('script');
+                script.src = 'app.js?v3';
+                document.body.appendChild(script);
+            });
+        });
+    </script> *@
 </body>
 
 </html>

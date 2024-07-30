@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Components.Web;
+
 using TaskCloud.WebApp.Components;
+using TaskCloud.WebApp.Components.Pages;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +9,14 @@ builder.AddServiceDefaults();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+    .AddInteractiveServerComponents(options =>
+    {
+        options.RootComponents.RegisterForJavaScript<Tasks>(identifier: "home",
+          javaScriptInitializer: "initializeComponent");
+
+        options.RootComponents.RegisterForJavaScript<Tasks>(identifier: "tasks",
+          javaScriptInitializer: "initializeComponent");
+    });
 
 var app = builder.Build();
 

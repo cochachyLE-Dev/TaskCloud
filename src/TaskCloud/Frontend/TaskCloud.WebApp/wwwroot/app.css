@@ -49,3 +49,68 @@ h1:focus {
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
 }
+
+.split-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.pane {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+}
+
+.top-pane {
+    background-color: #f1f1f1;
+    border-bottom: 2px solid #ddd;
+}
+
+.bottom-pane {
+    background-color: #e1e1e1;
+}
+
+.resizer {
+    background: #ddd;
+    height: 10px;
+    cursor: ns-resize;
+    flex-shrink: 0;
+}
+
+/* Container to handle scrolling and fixed header */
+.table-container {
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Styling for the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    /* Fixed header styling */
+    .table thead {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0; /* Fixes the header to the top of the container */
+        background-color: #f4f4f4; /* Background color to differentiate the header */
+        z-index: 1; /* Ensures the header stays above the table body */
+    }
+
+    /* Styling for table cells */
+    .table th, .table td {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+    }
+
+    /* Optional: add styles for alternating row colors or header text color */
+    .table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .table thead th {
+        background-color: #eaeaea;
+    }

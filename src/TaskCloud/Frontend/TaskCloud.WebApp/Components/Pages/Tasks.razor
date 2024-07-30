@@ -1,4 +1,7 @@
 ﻿@page "/tasks"
+@implements IAsyncDisposable
+@inject ILogger<Tasks> Logger
+@inject IJSRuntime JS
 @attribute [StreamRendering]
 
 <PageTitle>Weather</PageTitle>
@@ -19,81 +22,163 @@
 </nav>
 
 
-@if (forecasts == null)
+@if (tasks == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>
-                        <input type="checkbox" @bind-value="forecast.IsSelected" />
-                    </td>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                    <td>
-                        <InputSelect @bind-Value="selectedItem">
-                            @foreach (var item in items)
-                            {
-                                <option value="@item">@item</option>
-                            }
-                        </InputSelect>
-                    </td>
-                    <td>
-                        <NavLink class="nav-link" href="/tasks/edit/1">
-                            edit
-                        </NavLink>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="split-container">
+        <div class="pane top-pane">
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Priority</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Assigned User</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var t in tasks)
+                        {
+                            <tr>
+                                <td>
+                                    <input type="checkbox" @bind-value="t.IsSelected" />
+                                </td>
+                                <td>@t.Title</td>
+                                <td>@t.Description</td>
+                                <td>
+                                    <InputSelect @bind-Value="t.Priority">
+                                        @foreach (var item in priority)
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    </InputSelect>
+                                </td>
+                                <td>@t.DueDate.ToShortDateString()</td>
+                                <td>
+                                    <InputSelect @bind-Value="t.Status">
+                                        @foreach (var item in status)
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    </InputSelect>
+                                </td>
+                                <td>
+                                    @t.AssignedUser?.Username
+                                </td>
+                                <td>
+                                    <NavLink class="nav-link" href="/tasks/edit/1">
+                                        edit
+                                    </NavLink>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="resizer"></div>
+        <div class="pane bottom-pane">
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Priority</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                            <th>Assigned User</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var t in tasks)
+                        {
+                            <tr>
+                                <td>
+                                    <input type="checkbox" @bind-value="t.IsSelected" />
+                                </td>
+                                <td>@t.Title</td>
+                                <td>@t.Description</td>
+                                <td>
+                                    <InputSelect @bind-Value="t.Priority">
+                                        @foreach (var item in priority)
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    </InputSelect>
+                                </td>
+                                <td>@t.DueDate.ToShortDateString()</td>
+                                <td>
+                                    <InputSelect @bind-Value="t.Status">
+                                        @foreach (var item in status)
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    </InputSelect>
+                                </td>
+                                <td>
+                                    @t.AssignedUser?.Username
+                                </td>
+                                <td>
+                                    <NavLink class="nav-link" href="/tasks/edit/1">
+                                        edit
+                                    </NavLink>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 }
 
 @code {
-    private string[] items = new string[] { "Option 1", "Option 2", "Option 3" };
-    private string selectedItem;
+    private IJSObjectReference? module;
+    private string[] status = Enum.GetNames(typeof(Components.Enum.Status));
+    private string? selectedStatus;
 
-    private WeatherForecast[]? forecasts;
+    private string[] priority = Enum.GetNames(typeof(Components.Enum.Priority));
+    private string? selectedPriority;
+
+    private Models.Task[]? tasks;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Logger.LogInformation("OnAfterRenderAsync: firstRender");
+
+            module = await JS.InvokeAsync<IJSObjectReference>(
+                "import", "./Components/Pages/Tasks.razor.js");
+
+            await module.InvokeVoidAsync("Tasks.InitializeComponent");
+        }
+    }
 
     protected override async Task OnInitializedAsync()
     {
+        Logger.LogInformation("OnInitializedAsync");
+
         // Simulate asynchronous loading to demonstrate streaming rendering
         await Task.Delay(500);
-
-        var startDate = DateOnly.FromDateTime(DateTime.Now);
-        var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
-        forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = summaries[Random.Shared.Next(summaries.Length)]
-        }).ToArray();
-    }
-
-    private class WeatherForecast
+        tasks = Seeds.Tasks.GetData().ToArray();
+    }   
+    async ValueTask IAsyncDisposable.DisposeAsync()
     {
-        public DateOnly Date { get; set; }
-        public int TemperatureC { get; set; }
-        public string? Summary { get; set; }
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-        public bool IsSelected { get; set; }
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
     }
 }
