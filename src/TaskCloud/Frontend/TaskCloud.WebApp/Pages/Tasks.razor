@@ -23,8 +23,8 @@
           Responsive
           Bordered
           Hoverable
-          Narrow
-          SelectedRow="selectedTask"
+          Narrow          
+          @bind-SelectedRow="selectedTask"
           ShowGrouping
           ResizeMode="TableResizeMode.Columns">
     <DataGridColumns>
@@ -88,72 +88,90 @@
     </DataGridColumns>
 </DataGrid>
 
-<Tabs SelectedTab="@selectedTab" SelectedTabChanged="@OnSelectedTabChanged">
-    <Items>
-        <Tab Name="sub-tasks">Sub Tasks</Tab>
-        <Tab Name="coments">Comments</Tab>        
-    </Items>
-    <Content>
-        <TabPanel Name="sub-tasks">
-            <DataGrid TItem="Models.Task"
-                      Data="tasks"
-                      Sortable
-                      SortMode="DataGridSortMode.Single"
-                      ShowPager
-                      ShowPageSizes
-                      Resizable
-                      Responsive
-                      Bordered
-                      Hoverable
-                      Narrow
-                      SelectedRow="selectedTask"
-                      ShowGrouping
-                      ResizeMode="TableResizeMode.Columns">
-                <DataGridColumns>
-                    <DataGridColumn Field="@nameof(Models.Task.Title)" Caption="Title"></DataGridColumn>
-                    <DataGridColumn Field="@nameof(Models.Task.Description)" Caption="Description"></DataGridColumn>
-                    <DataGridColumn Field="@nameof(Models.Task.Priority)" Caption="Priority">
-                        <DisplayTemplate>
-                            <Select TValue="Priority" @bind-SelectedValue="@context.Priority">
-                                @foreach (var priority in priority)
-                                {
-                                    <SelectItem Value="@priority">@priority</SelectItem>
-                                }
-                            </Select>
-                        </DisplayTemplate>
-                    </DataGridColumn>
-                    <DataGridColumn Field="@nameof(Models.Task.DueDate)" Caption="Due Date"></DataGridColumn>
-                    <DataGridColumn Field="@nameof(Models.Task.Status)" Caption="Status">
-                        <DisplayTemplate>
-                            <Select TValue="Status" @bind-SelectedValue="@context.Status">
-                                @foreach (var status in status)
-                                {
-                                    <SelectItem Value="@status">@status</SelectItem>
-                                }
-                            </Select>
-                        </DisplayTemplate>
-                    </DataGridColumn>
-                    <DataGridColumn Field="@nameof(Models.Task.Progress)" Caption="Progress">
-                        <DisplayTemplate>
-                            <Progress Min="0" Max="100" Value="@context.Progress" Color="Color.Primary">
-                                <ProgressBar Value="@context.Progress"></ProgressBar>
-                            </Progress>
-                        </DisplayTemplate>
-                    </DataGridColumn>
-                    <DataGridColumn Caption="Actions" Width="144">
-                        <DisplayTemplate>
-                            <Button Color="Color.Primary" Clicked="@ShowModal">Edit</Button>
-                            <Button Color="Color.Danger">Delete</Button>
-                        </DisplayTemplate>
-                    </DataGridColumn>
-                </DataGridColumns>
-            </DataGrid>
-        </TabPanel>
-        <TabPanel Name="coments">
-            Content for comment
-        </TabPanel>        
-    </Content>
-</Tabs>
+@if (selectedTab != null)
+{
+    @if (selectedTask.IsProject)
+    {
+        <Tabs SelectedTab="comments" SelectedTabChanged="@OnSelectedTabChanged">
+            <Items>                
+                <Tab Name="comments">Comments</Tab>        
+            </Items>
+            <Content>
+                <TabPanel Name="comments">
+                    Content for comment
+                </TabPanel>        
+            </Content>
+        </Tabs>
+    }else
+    {
+        <Tabs SelectedTab="@selectedTab" SelectedTabChanged="@OnSelectedTabChanged">
+            <Items>
+                <Tab Name="sub-tasks">Sub Tasks</Tab>
+                <Tab Name="comments2">Comments</Tab>
+            </Items>
+            <Content>
+                <TabPanel Name="sub-tasks">
+                    <DataGrid TItem="Models.Task"
+                              Data="selectedTask.SubTasks"
+                              Sortable
+                              SortMode="DataGridSortMode.Single"
+                              ShowPager
+                              ShowPageSizes
+                              Resizable
+                              Responsive
+                              Bordered
+                              Hoverable
+                              Narrow
+                              SelectedRow="selectedTask"
+                              ShowGrouping
+                              ResizeMode="TableResizeMode.Columns">
+                        <DataGridColumns>
+                            <DataGridColumn Field="@nameof(Models.Task.Title)" Caption="Title"></DataGridColumn>
+                            <DataGridColumn Field="@nameof(Models.Task.Description)" Caption="Description"></DataGridColumn>
+                            <DataGridColumn Field="@nameof(Models.Task.Priority)" Caption="Priority">
+                                <DisplayTemplate>
+                                    <Select TValue="Priority" @bind-SelectedValue="@context.Priority">
+                                        @foreach (var priority in priority)
+                                        {
+                                            <SelectItem Value="@priority">@priority</SelectItem>
+                                        }
+                                    </Select>
+                                </DisplayTemplate>
+                            </DataGridColumn>
+                            <DataGridColumn Field="@nameof(Models.Task.DueDate)" Caption="Due Date"></DataGridColumn>
+                            <DataGridColumn Field="@nameof(Models.Task.Status)" Caption="Status">
+                                <DisplayTemplate>
+                                    <Select TValue="Status" @bind-SelectedValue="@context.Status">
+                                        @foreach (var status in status)
+                                        {
+                                            <SelectItem Value="@status">@status</SelectItem>
+                                        }
+                                    </Select>
+                                </DisplayTemplate>
+                            </DataGridColumn>
+                            <DataGridColumn Field="@nameof(Models.Task.Progress)" Caption="Progress">
+                                <DisplayTemplate>
+                                    <Progress Min="0" Max="100" Value="@context.Progress" Color="Color.Primary">
+                                        <ProgressBar Value="@context.Progress"></ProgressBar>
+                                    </Progress>
+                                </DisplayTemplate>
+                            </DataGridColumn>
+                            <DataGridColumn Caption="Actions" Width="144">
+                                <DisplayTemplate>
+                                    <Button Color="Color.Primary" Clicked="@ShowModal">Edit</Button>
+                                    <Button Color="Color.Danger">Delete</Button>
+                                </DisplayTemplate>
+                            </DataGridColumn>
+                        </DataGridColumns>
+                    </DataGrid>
+                </TabPanel>
+                <TabPanel Name="comments2">
+                    Content for comment
+                </TabPanel>        
+            </Content>
+        </Tabs>        
+    }
+}
 
 <Modal @ref="modalRef">
     <ModalContent Centered>
