@@ -14,7 +14,8 @@ namespace TaskCloud.WebApp.Seeds
                     Username = "admin",
                     Email = "admin@example.com",
                     Password = "admin123",
-                    Role = "Admin"
+                    Role = "Admin",
+                    ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairFrizzle&accessoriesType=Blank&hairColor=Blonde&facialHairType=BeardMedium&facialHairColor=BlondeGolden&clotheType=BlazerSweater&clotheColor=Blue01&eyeType=WinkWacky&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Pale"
                 },
                 new User
             {
@@ -22,7 +23,8 @@ namespace TaskCloud.WebApp.Seeds
                 Username = "projectmanager1",
                 Email = "pm1@example.com",
                 Password = "pm123",
-                Role = "Project Manager"
+                Role = "Project Manager",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFroBand&accessoriesType=Kurt&hairColor=BrownDark&facialHairType=Blank&clotheType=ShirtVNeck&clotheColor=White&eyeType=Cry&eyebrowType=DefaultNatural&mouthType=Tongue&skinColor=Yellow"
             },
                 new User
                 {
@@ -30,7 +32,8 @@ namespace TaskCloud.WebApp.Seeds
                     Username = "user1",
                     Email = "user1@example.com",
                     Password = "user123",
-                    Role = "User"
+                    Role = "User",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=WinterHat2&accessoriesType=Prescription02&hatColor=Blue01&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=Happy&eyebrowType=UpDown&mouthType=Twinkle&skinColor=Pale"
                 },
                 new User
                 {
@@ -38,7 +41,8 @@ namespace TaskCloud.WebApp.Seeds
                     Username = "user2",
                     Email = "user2@example.com",
                     Password = "user123",
-                    Role = "User"
+                    Role = "User",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=WinterHat3&accessoriesType=Blank&hatColor=Red&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Brown"
                 },
                 new User
             {
@@ -46,7 +50,8 @@ namespace TaskCloud.WebApp.Seeds
                 Username = "observer1",
                 Email = "observer1@example.com",
                 Password = "observer123",
-                Role = "Observer"
+                Role = "Observer",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShaggyMullet&accessoriesType=Prescription01&hairColor=Blue&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=Pink&eyeType=Cry&eyebrowType=AngryNatural&mouthType=Default&skinColor=Yellow"
             },
             new User
             {
@@ -54,7 +59,8 @@ namespace TaskCloud.WebApp.Seeds
                 Username = "superuser",
                 Email = "superuser@example.com",
                 Password = "superuser123",
-                Role = "Superuser"
+                Role = "Superuser",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Round&hairColor=Auburn&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=ShirtVNeck&clotheColor=PastelGreen&eyeType=WinkWacky&eyebrowType=Angry&mouthType=Smile&skinColor=Pale"
             },
             new User
             {
@@ -62,7 +68,8 @@ namespace TaskCloud.WebApp.Seeds
                 Username = "developer1",
                 Email = "dev1@example.com",
                 Password = "dev123",
-                Role = "Developer"
+                Role = "Developer",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraightStrand&accessoriesType=Sunglasses&hairColor=Auburn&facialHairType=BeardMajestic&facialHairColor=Auburn&clotheType=BlazerSweater&clotheColor=PastelRed&eyeType=Dizzy&eyebrowType=Angry&mouthType=ScreamOpen&skinColor=Yellow"
             },
             new User
             {
@@ -70,7 +77,8 @@ namespace TaskCloud.WebApp.Seeds
                 Username = "tester1",
                 Email = "tester1@example.com",
                 Password = "tester123",
-                Role = "Tester"
+                Role = "Tester",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=WinterHat1&accessoriesType=Blank&hatColor=Heather&hairColor=Blue&facialHairType=Blank&facialHairColor=Red&clotheType=ShirtCrewNeck&clotheColor=Black&eyeType=Hearts&eyebrowType=FlatNatural&mouthType=Concerned&skinColor=Black"
             },
             new User
             {
@@ -78,7 +86,8 @@ namespace TaskCloud.WebApp.Seeds
                 Username = "client1",
                 Email = "client1@example.com",
                 Password = "client123",
-                Role = "Client"
+                Role = "Client",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Red&facialHairType=MoustacheFancy&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=UpDown&mouthType=Serious&skinColor=Tanned"
             },
             new User
             {
@@ -86,7 +95,8 @@ namespace TaskCloud.WebApp.Seeds
                 Username = "guest1",
                 Email = "guest1@example.com",
                 Password = "guest123",
-                Role = "Guest"
+                Role = "Guest",
+                ImageUrl = "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Kurt&hairColor=Blue&facialHairType=Blank&clotheType=CollarSweater&clotheColor=White&eyeType=Cry&eyebrowType=Default&mouthType=Tongue&skinColor=Pale"
             }
             };
             return users;

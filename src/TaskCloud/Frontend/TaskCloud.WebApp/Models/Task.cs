@@ -12,7 +12,7 @@ namespace TaskCloud.WebApp.Models
         public Status Status { get; set; } = Status.NotStarted;
         public int Progress { get; set; }
         public int AssignedUserId { get; set; }
-        public User? AssignedUser { get; set; }
+        public User? AssignedUser { get; set; } = new();        
         public List<Task> SubTasks { get; set; } = new List<Task>();
         public List<Comment> Comments { get; set; } = new List<Comment>();
         public bool IsProject { get; set; }

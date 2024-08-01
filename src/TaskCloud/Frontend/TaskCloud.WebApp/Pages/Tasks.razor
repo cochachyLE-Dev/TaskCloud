@@ -50,7 +50,15 @@
                     }
                 </Select>
             </DisplayTemplate>
-        </DataGridColumn>        
+        </DataGridColumn>       
+        <DataGridColumn Caption="Assigned User">
+            <DisplayTemplate>
+                <Div Class="assigner-info">
+                    <Image Source="@context.AssignedUser?.ImageUrl" Text="@context.AssignedUser?.Username" Fluid Class="img-rounded" />
+                    <Span Class="assigner-name">@context.AssignedUser?.Email</Span>
+                </Div>           
+            </DisplayTemplate>
+        </DataGridColumn>
         <DataGridColumn Field="@nameof(Models.Task.Progress)" Caption="Progress">
             <DisplayTemplate>
                 <Progress Min="0" Max="100" Value="@context.Progress" Color="Color.Primary">

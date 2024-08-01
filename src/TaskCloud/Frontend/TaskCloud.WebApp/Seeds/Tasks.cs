@@ -8,6 +8,7 @@ namespace TaskCloud.WebApp.Seeds
     {
         public static IEnumerable<Task> GetData()
         {
+            var users = Users.GetData();
             var tasks = new List<Task>
             {
                 new Task
@@ -20,14 +21,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.Pending,
                     Progress = 0,
                     AssignedUserId = 1,
-                    AssignedUser = new User
-                    {
-                        Id = 1,
-                        Username = "admin",
-                        Email = "admin@example.com",
-                        Password = "admin123",
-                        Role = "Admin"
-                    },
+                    AssignedUser = users.Single(x => x.Id == 1),
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Create repository", Description = "Set up a new Git repository.", Priority = Priority.High, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
                         new Task { Id = 2, Title = "Install dependencies", Description = "Install required dependencies using NuGet.", Priority = Priority.Medium, DueDate = DateTime.Now.AddDays(2), Status = Status.NotStarted },
@@ -50,15 +44,8 @@ namespace TaskCloud.WebApp.Seeds
                     DueDate = new DateTime(2024, 8, 10),
                     Status = Status.InProgress,
                     Progress = 60,
-                    AssignedUserId = 2,                    
-                    AssignedUser = new User
-                    {
-                        Id = 2,
-                        Username = "projectmanager1",
-                        Email = "pm1@example.com",
-                        Password = "pm123",
-                        Role = "Project Manager"
-                    },
+                    AssignedUserId = 2,
+                    AssignedUser = users.Single(x => x.Id == 2),
                     IsProject = true,
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Review API documentation", Description = "Understand the API endpoints and usage.", Priority = Priority.Medium, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
@@ -83,14 +70,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.NotStarted,
                     Progress = 45,
                     AssignedUserId = 3,
-                    AssignedUser = new User
-                    {
-                        Id = 3,
-                        Username = "user1",
-                        Email = "user1@example.com",
-                        Password = "user123",
-                        Role = "User"
-                    },
+                    AssignedUser = users.Single(x => x.Id == 3),
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Create wireframes", Description = "Design wireframes for the main screen.", Priority = Priority.High, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
                         new Task { Id = 2, Title = "Select color scheme", Description = "Choose a color scheme for the application.", Priority = Priority.Medium, DueDate = DateTime.Now.AddDays(2), Status = Status.NotStarted },
@@ -114,14 +94,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.Pending,
                     Progress = 0,
                     AssignedUserId = 4,
-                    AssignedUser = new User
-                    {
-                        Id = 4,
-                        Username = "user2",
-                        Email = "user2@example.com",
-                        Password = "user123",
-                        Role = "User"
-                    },
+                    AssignedUser = users.Single(x => x.Id == 4),
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Backup current database", Description = "Create a backup of the current database.", Priority = Priority.Critical, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
                         new Task { Id = 2, Title = "Review new schema", Description = "Review the new database schema.", Priority = Priority.High, DueDate = DateTime.Now.AddDays(2), Status = Status.NotStarted },
@@ -145,15 +118,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.InProgress,
                     Progress = 25,
                     AssignedUserId = 5,
-                    AssignedUser = new User
-                    {
-                        Id = 5,
-                        Username = "observer1",
-                        Email = "observer1@example.com",
-                        Password = "observer123",
-                        Role = "Observer"
-
-                        },
+                    AssignedUser = users.Single(x => x.Id == 5),
                     IsProject = true,
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Choose authentication method", Description = "Decide on an authentication method (e.g., OAuth, JWT).", Priority = Priority.High, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
@@ -178,14 +143,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.NotStarted,
                     Progress = 0,
                     AssignedUserId = 6,
-                    AssignedUser = new User
-                    {
-                        Id = 6,
-                        Username = "superuser",
-                        Email = "superuser@example.com",
-                        Password = "superuser123",
-                        Role = "Superuser"
-                    },
+                    AssignedUser = users.Single(x => x.Id == 6),
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Identify bottlenecks", Description = "Find performance bottlenecks in the application.", Priority = Priority.Critical, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
                         new Task { Id = 2, Title = "Optimize database queries", Description = "Improve the performance of database queries.", Priority = Priority.High, DueDate = DateTime.Now.AddDays(2), Status = Status.NotStarted },
@@ -209,14 +167,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.Pending,
                     Progress = 0,
                     AssignedUserId = 7,
-                    AssignedUser = new User
-                    {
-                        Id = 7,
-                        Username = "developer1",
-                        Email = "dev1@example.com",
-                        Password = "dev123",
-                        Role = "Developer"
-                    },
+                    AssignedUser = users.Single(x => x.Id == 7),
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Create test plan", Description = "Write a detailed test plan.", Priority = Priority.High, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
                         new Task { Id = 2, Title = "Write unit tests", Description = "Create unit tests for new features.", Priority = Priority.Critical, DueDate = DateTime.Now.AddDays(2), Status = Status.NotStarted },
@@ -240,14 +191,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.InProgress,
                     Progress = 2,
                     AssignedUserId = 8,
-                    AssignedUser = new User
-                    {
-                        Id = 8,
-                        Username = "tester1",
-                        Email = "tester1@example.com",
-                        Password = "tester123",
-                        Role = "Tester"
-                    },
+                    AssignedUser = users.Single(x => x.Id == 8),
                     IsProject = true,
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "API documentation", Description = "Write detailed documentation for the API.", Priority = Priority.High, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
@@ -272,14 +216,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.NotStarted,
                     Progress = 0,
                     AssignedUserId = 9,
-                    AssignedUser = new User
-                    {
-                        Id = 9,
-                        Username = "client1",
-                        Email = "client1@example.com",
-                        Password = "client123",
-                        Role = "Client"
-                    },
+                    AssignedUser = users.Single(x => x.Id == 9),
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Prepare deployment plan", Description = "Create a detailed deployment plan.", Priority = Priority.Critical, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
                         new Task { Id = 2, Title = "Set up production environment", Description = "Configure the production environment.", Priority = Priority.High, DueDate = DateTime.Now.AddDays(2), Status = Status.NotStarted },
@@ -303,14 +240,7 @@ namespace TaskCloud.WebApp.Seeds
                     Status = Status.Pending,
                     Progress = 0,
                     AssignedUserId = 10,
-                    AssignedUser = new User
-                    {
-                        Id = 10,
-                        Username = "guest1",
-                        Email = "guest1@example.com",
-                        Password = "guest123",
-                        Role = "Guest"
-                    },
+                    AssignedUser = users.Single(x => x.Id == 10),
                     SubTasks = new List<Models.Task> {
                         new Task { Id = 1, Title = "Prepare feedback form", Description = "Create a feedback form for clients.", Priority = Priority.Medium, DueDate = DateTime.Now.AddDays(1), Status = Status.NotStarted },
                         new Task { Id = 2, Title = "Send feedback request", Description = "Send feedback request to clients.", Priority = Priority.High, DueDate = DateTime.Now.AddDays(2), Status = Status.NotStarted },

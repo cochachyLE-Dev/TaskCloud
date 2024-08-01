@@ -7,6 +7,7 @@
         public string? Email { get; set; }
         public string? Password { get; set; }
         public string? Role { get; set; }
+        public string? ImageUrl { get; set; }
         public List<Task> Tasks { get; set; } = new List<Task>();
         public bool IsSelected { get; set; }
     }

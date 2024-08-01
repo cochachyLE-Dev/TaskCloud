@@ -101,3 +101,19 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.img-rounded {
+    border-radius:50%;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.assigner-info {
+    display: flex;
+    align-items: center;
+}
+
+.assigner-name {
+    font-size: 1rem;
+}
