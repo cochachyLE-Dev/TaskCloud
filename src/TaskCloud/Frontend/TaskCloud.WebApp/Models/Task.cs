@@ -15,6 +15,7 @@ namespace TaskCloud.WebApp.Models
         public User? AssignedUser { get; set; }
         public List<Task> SubTasks { get; set; } = new List<Task>();
         public List<Comment> Comments { get; set; } = new List<Comment>();
+        public bool IsProject { get; set; }
         public bool IsSelected { get; set; }
     }
 }

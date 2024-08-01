@@ -58,12 +58,13 @@
                 </Progress>
             </DisplayTemplate>
         </DataGridColumn>
-        <DataGridColumn Caption="Actions" Width="144">
+        <DataGridColumn Field="@nameof(Models.Task.IsProject)" Caption="Actions" Width="144">
             <DisplayTemplate>
+                <Button Color="@(context.IsProject ? Color.Light: Color.Info)" Clicked="@ShowModal"> @(context.IsProject ? "Show Project " : "Create project")</Button>
                 <Button Color="Color.Primary" Clicked="@ShowModal">Edit</Button>
                 <Button Color="Color.Danger">Delete</Button>
             </DisplayTemplate>
-        </DataGridColumn>
+        </DataGridColumn>        
         <DataGridCommandColumn PreventRowClick>
             <NewCommandTemplate>
                 <Button Color="Color.Success" Clicked="@context.Clicked">@context.LocalizationString</Button>
@@ -144,7 +145,7 @@
                             <Button Color="Color.Primary" Clicked="@ShowModal">Edit</Button>
                             <Button Color="Color.Danger">Delete</Button>
                         </DisplayTemplate>
-                    </DataGridColumn>    
+                    </DataGridColumn>
                 </DataGridColumns>
             </DataGrid>
         </TabPanel>

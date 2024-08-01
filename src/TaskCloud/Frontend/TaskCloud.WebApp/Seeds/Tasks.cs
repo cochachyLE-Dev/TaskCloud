@@ -38,7 +38,7 @@ namespace TaskCloud.WebApp.Seeds
                     DueDate = new DateTime(2024, 8, 10),
                     Status = Status.InProgress,
                     Progress = 60,
-                    AssignedUserId = 2,
+                    AssignedUserId = 2,                    
                     AssignedUser = new User
                     {
                         Id = 2,
@@ -46,7 +46,8 @@ namespace TaskCloud.WebApp.Seeds
                         Email = "pm1@example.com",
                         Password = "pm123",
                         Role = "Project Manager"
-                    }
+                    },
+                    IsProject = true
                 },
                 new Task
                 {
@@ -104,7 +105,8 @@ namespace TaskCloud.WebApp.Seeds
                         Password = "observer123",
                         Role = "Observer"
 
-                        }
+                        },
+                    IsProject = true
                 },
                 new Task
                 {
@@ -161,7 +163,8 @@ namespace TaskCloud.WebApp.Seeds
                         Email = "tester1@example.com",
                         Password = "tester123",
                         Role = "Tester"
-                    }
+                    },
+                    IsProject = true
                 },
                 new Task
                 {
