@@ -68,7 +68,7 @@
         </DataGridColumn>
         <DataGridColumn Field="@nameof(Models.Task.IsProject)" Caption="Actions" Width="144">
             <DisplayTemplate>
-                <Button Color="@(context.IsProject ? Color.Light: Color.Info)" Clicked="@ShowModal"> @(context.IsProject ? "Show Project " : "Create project")</Button>
+                <Button Color="@(context.IsProject ? Color.Light: Color.Info)" Clicked="@ShowModal" Class="btn-to-project"> @(context.IsProject ? "Detail" : "To project")</Button>
                 <Button Color="Color.Primary" Clicked="@ShowModal">Edit</Button>
                 <Button Color="Color.Danger">Delete</Button>
             </DisplayTemplate>
