@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -19,7 +19,7 @@
     <ProjectReference Include="..\..\Backend\TaskCloud.Authentication\TaskCloud.Authentication.csproj" />
     <ProjectReference Include="..\..\Backend\TaskCloud.Tasks\TaskCloud.Tasks.csproj" />
     <ProjectReference Include="..\..\Backend\TaskCloud.Users\TaskCloud.Users.csproj" />
-    <ProjectReference Include="..\..\Frontend\TaskCloud.WebApp\TaskCloud.WebApp.csproj" />
+    <ProjectReference Include="..\..\Frontend\TaskCloud.WebApp\TaskCloud.WebApp2.csproj" />
   </ItemGroup>
 
 </Project>

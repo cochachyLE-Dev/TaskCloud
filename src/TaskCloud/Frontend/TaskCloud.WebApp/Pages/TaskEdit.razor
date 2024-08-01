@@ -1,0 +1,30 @@
+﻿<div class="row">
+    <div class="col-5 col-md-3 text-end">Task Id :</div>
+    <div class="col-7 col-md-9">@Task.Id</div>
+</div>
+<div class="row">
+    <div class="col-5 col-md-3 text-end">Title :</div>
+    <div class="col-7 col-md-9">@Task.Title</div>
+</div>
+<div class="row">
+    <div class="col-5 col-md-3 text-end">Description :</div>
+    <div class="col-7 col-md-9">@Task.Description</div>
+</div>
+
+<Button class="mt-3" Color="Color.Primary" Type="ButtonType.Button" @onclick="UpdateTask"> Update </Button>
+
+@code {
+    [Parameter] public Models.Task Task { get; set; } = default!;
+
+    [Parameter] public EventCallback<Models.Task> OnUpdateCallback { get; set; }
+
+    private async Task UpdateTask()
+    {
+        // TODO: save to database
+
+        if (OnUpdateCallback.HasDelegate)
+        {
+            await OnUpdateCallback.InvokeAsync(Task);
+        }
+    }
+}
