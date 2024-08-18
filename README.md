@@ -94,3 +94,5 @@ TaskCloud es una aplicación web diseñada para ayudar a individuos y equipos a 
     - Tipos de notificaciones (correo electrónico, push, SMS).
     - Canales de notificación.
     - Configuración de preferencias de notificación por usuario.
+
+**Estado actual:** [work in progress]
